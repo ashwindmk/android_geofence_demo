@@ -22,11 +22,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class GeofenceTransitionsJobIntentService extends JobIntentService {
     private static final int JOB_ID = 573;
     private static final String CHANNEL_ID = "channel_01";
-    private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US);
 
     public static void enqueueWork(Context context, Intent intent) {
         enqueueWork(context, GeofenceTransitionsJobIntentService.class, JOB_ID, intent);
