@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class GeofenceTransitionsJobIntentService extends JobIntentService {
-    private static final int JOB_ID = 573;
+    private static final int JOB_ID = 550;
     private static final String CHANNEL_ID = "channel_01";
     private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US);
 
@@ -37,7 +37,7 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
     protected void onHandleWork(@NonNull Intent intent) {
         GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
         if (geofencingEvent.hasError()) {
-            String errorMessage = GeofenceErrorMessages.getErrorString(this, geofencingEvent.getErrorCode());
+            String errorMessage = Utils.getErrorString(geofencingEvent.getErrorCode());
             Log.e(Constants.TAG, errorMessage);
             return;
         }

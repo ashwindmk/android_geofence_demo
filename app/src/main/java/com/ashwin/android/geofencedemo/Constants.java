@@ -26,7 +26,7 @@ final class Constants {
         GEOFENCE_LANDMARKS.put("goregaon", new LatLng(19.1648, 72.8493));
     }
 
-    // Button texts
-    static final String ADD_GEOFENCES = "ADD GEOFENCES";
-    static final String REMOVE_GEOFENCES = "REMOVE GEOFENCES";
+    static final String GEOFENCE_ACTION_COMPLETE = "action_complete";
+    static final String ACTION_ADD = "ADD";
+    static final String ACTION_REMOVE = "REMOVE";
 }
